@@ -1,0 +1,23 @@
+﻿@addTagHelper "*,Microsoft.AspNetCore.Mvc.TagHelpers"
+@model WebApplication2.Models.ContactListViewModel
+@{
+    ViewData["Title"] = "ContactList";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contact List</title>
+</head>
+<body>
+    There are a total of @Model.NumberOfContacts contacts.
+
+    <ul>
+        @foreach (WebApplication2.Models.Contact contact in Model.Contacts)
+        {
+            <li>@contact.Id @contact.FirstName @contact.LastName @contact.PhoneNumber</li>
+        }
+
+    </ul>
+    <a asp-action="Index">Add New Contact</a>
+</body>
+</html>

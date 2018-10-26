@@ -1,0 +1,23 @@
+﻿@addTagHelper "*,Microsoft.AspNetCore.Mvc.TagHelpers"
+@model WebApplication2.Models.Contact
+@{
+    ViewData["Title"] = "IndexWithForm";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <div asp-validation-summary="All"></div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        @Html.EditorForModel()
+        <button type="submit">Submit</button>
+    }
+
+
+</body>
+</html>
+
